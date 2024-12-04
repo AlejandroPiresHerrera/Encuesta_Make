@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta Interactiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group input[type="range"] {
+            width: 100%;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Encuesta Interactiva</h1>
+        <form id="surveyForm" action="https://hook.eu2.make.com/ebtmwy1aenq2bo14ec93fvudextkb6mh" method="POST">
+            <div class="form-group">
+                <label for="name">¿Cuál es tu nombre?</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">¿Cuál es tu correo electrónico?</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>¿Cómo calificarías nuestra plataforma?</label>
+                <input type="range" id="rating" name="rating" min="1" max="5" step="1" oninput="updateRatingValue(this.value)">
+                <span id="ratingValue">3</span>/5
+            </div>
+            <div class="form-group">
+                <label>¿Qué funcionalidad te gustaría ver en el futuro?</label>
+                <select id="feature" name="feature" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="Chat en vivo">Chat en vivo</option>
+                    <option value="Integración con redes sociales">Integración con redes sociales</option>
+                    <option value="Soporte 24/7">Soporte 24/7</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>¿Tienes comentarios adicionales?</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        // Actualizar el valor del rango dinámicamente
+        function updateRatingValue(value) {
+            document.getElementById('ratingValue').textContent = value;
+        }
+    </script>
+</body>
+</html>
